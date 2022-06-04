@@ -14,7 +14,7 @@ export type CharacterOrigin = typeof CHARACTER_ORIGIN[keyof typeof CHARACTER_ORI
 
 export type Character = {
   name: string;
-  origin: CharacterOrigin;
+  origin: CharacterOrigin; // 出自
   deck: string[]; // スキルのID配列
   blessing: string[]; // 祝福のID配列
 }

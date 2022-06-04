@@ -26,10 +26,10 @@ const TopHero: React.FC<TopHeroProps> = ({}) => {
 
   return (
     <Suspense fallback={<div>TODO: Loading</div>}>
-      <div aria-label="タイトル　ことれの" ref={onLoad} />
-      <h1 className={style.title}>
-        <span className={style.head}>ことれの</span>
-        <span className={style.tail}>奇譚</span>
+      <div ref={onLoad} />
+      <h1 aria-label='TODO' className={style.title}>
+        <span className={style.head} aria-hidden>TO</span>
+        <span className={style.tail} aria-hidden>DO</span>
       </h1>
     </Suspense>
   )

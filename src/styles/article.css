@@ -1,0 +1,203 @@
+/** 要素のフォントサイズ */
+h1 {
+  /** font-size: calc(0.8rem + 3.2vmin); */
+  font-size: 2.666rem;
+  font-variant-numeric: lining-nums;
+  line-height: 44px;
+  text-align: center;
+}
+
+h2 {
+  /** font-size: calc(0.5rem + 2.3vmin); */
+  font-size: 1.6rem;
+  font-variant-numeric: lining-nums;
+  line-height: 28px;
+}
+
+h3 {
+  /** font-size: calc(1rem + 0.6vmin); */
+  font-size: 1.143rem;
+  font-variant-numeric: lining-nums;
+  line-height: 20px;
+}
+
+h4,
+h5,
+h6 {
+  /** font-size: calc(1rem + 0.3vmin); */
+  font-variant-numeric: lining-nums;
+}
+
+p {
+  font-variant-numeric: oldstyle-nums; /** FIXME: Safariで1回拡大すると表示が少し崩れる */
+}
+
+p + p {
+  margin-top: 0;
+}
+
+/** サンクンキャップ */
+article p:first-of-type::first-letter {
+  initial-letter: 3 2;
+}
+
+/** フルーロン */
+hr {
+  height: calc(2em + 1.6vmin);
+  border: 0;
+  margin: 4.5em auto;
+  background: url(/assets/icons/fleuron.svg) center no-repeat;
+  background-size: contain;
+  content: '#10086';
+}
+
+/** リストの初期化 */
+ol {
+  padding-left: 0;
+  margin-left: 0;
+  counter-reset: initialized-list;
+  list-style: none;
+}
+
+ol li::before {
+  margin-right: 1em;
+  margin-left: -1.5em; /** TODO: これ読み上げのとき後ろ1文字切れちゃう気がするから確認 */
+  content: counter(initialized-list);
+  counter-increment: initialized-list;
+}
+
+/** リンク */
+a {
+  border-bottom: 1px solid var(--color-font-base);
+  text-decoration: none;
+  outline-color: var(--color-font-base);
+}
+
+a:visited {
+  border-bottom: 1px solid var(--color-font-accent);
+  outline-color: var(--color-font-accent);
+}
+
+@supports (text-decoration-skip-ink: auto) {
+  a {
+    border-bottom: 0;
+    text-decoration: underline solid var(--color-font-base);
+    text-decoration-skip-ink: auto;
+  }
+
+  a:visited {
+    border-bottom: 0;
+    text-decoration: underline solid var(--color-font-accent);
+    text-decoration-skip-ink: auto;
+  }
+}
+
+button {
+  outline-color: var(--color-sub);
+}
+
+input {
+  outline-color: var(--color-sub);
+}
+
+/** 上つき文字／下つき文字 */
+sub {
+  font-feature-settings: 'subs' 1;
+}
+
+@supports (font-variant-position: sub) {
+  sub {
+    font-feature-settings: normal;
+    font-variant-position: sub;
+  }
+}
+
+@supports ((font-variant-position: sub) or (font-feature-settings: 'subs' 1)) {
+  sub {
+    font-size: inherit;
+    vertical-align: baseline;
+  }
+}
+
+sup {
+  font-feature-settings: 'sups' 1;
+}
+
+@supports (font-variant-position: super) {
+  sup {
+    font-feature-settings: normal;
+    font-variant-position: super;
+  }
+}
+
+@supports ((font-variant-position: super) or (font-feature-settings: 'sups' 1)) {
+  sup {
+    font-size: inherit;
+    vertical-align: baseline;
+  }
+}
+
+/** 約物 */
+blockquote {
+  position: relative;
+  text-align: center;
+}
+
+blockquote::before {
+  margin-left: -0.6ch;
+  content: '&ldquo';
+}
+
+blockquote::after {
+  margin-right: -1.1ch;
+  content: '.&rdquo';
+}
+
+/** 記事レイアウト */
+article {
+  width: 100%;
+  max-width: min(38em, calc(100% - 48px));
+  margin-right: auto;
+  margin-left: auto;
+}
+
+article p {
+  margin-bottom: var(--space-m);
+  text-indent: 1.5em;
+}
+
+aside {
+  margin: 1em;
+
+  @media only screen and (min-width: 60em) {
+    width: 10em;
+    margin-top: 0;
+    margin-left: -11em;
+    float: left;
+  }
+
+  @media only screen and (min-width: 49em) {
+    width: 10em;
+    margin-top: 0;
+    margin-left: -5em;
+    float: left;
+  }
+}
+
+article details {
+  margin-top: var(--space-m);
+}
+
+article details > p {
+  margin-bottom: 0;
+  margin-left: var(--space-l);
+  font-size: 0.9em;
+}
+
+article details > p + p {
+  margin-top: var(--space-xs);
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}

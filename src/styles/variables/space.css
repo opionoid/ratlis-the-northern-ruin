@@ -1,0 +1,9 @@
+:root {
+  --space-unit: 0.5rem;
+  --space-xs: 1 * var(--space-unit);
+  --space-s: 2 * var(--space-unit);
+  --space-m: 3 * var(--space-unit);
+  --space-l: 5 * var(--space-unit);
+  --space-xl: 8 * var(--space-unit);
+  --space-xxl: 13 * var(--space-unit);
+}

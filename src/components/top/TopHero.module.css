@@ -1,0 +1,14 @@
+.title {
+  position: absolute;
+  font-size: 30vw;
+  writing-mode: vertical-rl;
+  line-height: 0;
+}
+
+.title > .head {
+  right: 30px;
+}
+
+.title > .tail {
+  right: 66%;
+}

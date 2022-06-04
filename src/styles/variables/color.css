@@ -1,0 +1,15 @@
+:root {
+  --color-base: #dcd5c8;
+  --color-base-lighten: #f2f5e6;
+  --color-base-darken: #b3b5aa;
+  --color-accent: #a2a2ad;
+  --color-accent-lighten: #babac7;
+  --color-accent-darken: #8a8a93;
+  --color-sub: #1f1e63;
+  --color-sub-lighten: #242372;
+  --color-sub-darken: #1a1a54;
+  --color-white: #fefefe;
+  --color-font-base: var(--color-sub);
+  --color-font-accent: var(--color-accent);
+  --color-font-sub: var(--color-base);
+}

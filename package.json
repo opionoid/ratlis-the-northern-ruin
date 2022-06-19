@@ -12,6 +12,7 @@
     "component": "node ./scripts/generateComponent/index.js"
   },
   "dependencies": {
+    "firebase": "^9.8.3",
     "next": "12.1.6",
     "next-export-i18n": "^2.0.3",
     "pixi.js": "^6.4.2",

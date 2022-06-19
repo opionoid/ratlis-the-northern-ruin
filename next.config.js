@@ -4,7 +4,7 @@
 const pathPrefix = process.env.NEXT_PUBLIC_PATH_PREFIX || "";
 
 // 多言語
-const { i18n } = require("./next-i18next.config");
+const { i18n } = require("./src/i18n");
 
 const nextConfig = {
   reactStrictMode: true,

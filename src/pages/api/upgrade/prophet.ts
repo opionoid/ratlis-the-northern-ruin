@@ -1,0 +1,10 @@
+/**
+ * カードの強化状況：預言者
+ */
+import type { NextApiRequest, NextApiResponse } from "next";
+
+type Data = {};
+
+export default async function handler(req: NextApiRequest, res: NextApiResponse<Data>) {
+  res.status(200).json({});
+}

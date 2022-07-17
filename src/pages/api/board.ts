@@ -3,7 +3,6 @@
  */
 import type { NextApiRequest, NextApiResponse } from "next";
 import { CharacterOriginName, CHARACTER_ORIGIN } from "../../atoms/character";
-import { API_METHODS } from "../../constants/api";
 
 type Data = {
   origin: CharacterOriginName;
@@ -13,11 +12,13 @@ type Data = {
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse<Data>) {
   switch (req.method) {
-    case API_METHODS.GET:
+    case 'GET':
       res.status(200).json({ origin: CHARACTER_ORIGIN.prophet.name, level: "grave", point: "0" });
-    case API_METHODS.POST:
+      return;
+    case 'POST':
       res
         .status(200)
         .json({ origin: CHARACTER_ORIGIN.prophet.name, level: req.body["level"], point: req.body["point"] });
+      return;
   }
 }

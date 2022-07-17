@@ -1,13 +1,19 @@
 /**
  * @file 戦闘 - 副作用の発火
+ * スキルやレリックによって副作用をスタックさせ前からトリガーさせていく。
+ * 副作用の登録は
+ *  - 祝福（ターン開始直前）
+ *  - バフ・デバフ（ターン開始直前）
+ *  - スキル（使用時）
+ * によって行う。
  */
 
 import { atom, RecoilState } from 'recoil';
 
- export type BattleEffect = {
+export type BattleEffect = {
   key: string;
   effect: () => void | Promise<void>;
- }
+}
 
 export const battleEffectsOnTurnStart: RecoilState<Set<BattleEffect>> = atom({
   key: 'battleEffectsOnTurnStart',

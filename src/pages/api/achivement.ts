@@ -3,7 +3,6 @@
  */
 import type { NextApiRequest, NextApiResponse } from "next";
 import { CharacterOriginName } from "../../atoms/character";
-import { API_METHODS } from "../../constants/api";
 
 type OriginData = {
   clearCount: number;
@@ -16,7 +15,7 @@ type Data = { [T in CharacterOriginName]: OriginData };
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse<Data>) {
   switch (req.method) {
-    case API_METHODS.GET:
+    case 'GET':
       res.status(200).json({
         prophet: {
           clearCount: 0,
@@ -31,7 +30,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
           allUpgradedCard: false,
         },
       });
-    case API_METHODS.POST:
+      return;
+    case 'POST':
       res.status(200).json({
         prophet: {
           clearCount: 0,
@@ -46,5 +46,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
           allUpgradedCard: false,
         },
       });
+      return;
   }
 }

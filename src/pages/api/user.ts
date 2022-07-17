@@ -5,7 +5,6 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import firebaseApp from "../../firebase";
 import { getAuth, signInWithRedirect, GoogleAuthProvider, signOut } from "firebase/auth";
-import { API_METHODS } from "../../constants/api";
 
 type Data = {
   name: string;
@@ -19,23 +18,26 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
     /**
      * ユーザー情報
      */
-    case API_METHODS.GET:
+    case 'GET':
       // TODO: firebaseで定義したAUTHの構造に合わせる
       res.status(200).json({ name: "テストユーザー", icon: "https://picsum.photos/200" });
+      return;
     /**
      * 認証操作
      */
-    case API_METHODS.POST:
+    case 'POST':
       if (req.query["action"] === "login") {
         // ログイン
         const auth = getAuth(firebaseApp);
         await signInWithRedirect(auth, provider).catch(() => res.status(500));
         res.status(200);
+        return;
       } else if (req.query["action"] === "sign-out") {
         // ログアウト
         const auth = getAuth(firebaseApp);
         await signOut(auth).catch(() => res.status(500));
         res.status(200);
+        return;
       }
   }
 }

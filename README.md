@@ -1,2 +1,2 @@
 # ratlis-the-northern-ruin
- Game respecting Slay the Spire
+ Game respecting Ruina and Path of Exile.

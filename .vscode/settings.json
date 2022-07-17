@@ -1,13 +1,17 @@
 {
-    "eslint.validate": ["javascript", "typescript"],
-    "stylelint.validate": ["css"],
+    "eslint.validate": [
+        "javascript",
+        "typescript"
+    ],
+    "stylelint.validate": [
+        "css"
+    ],
     "editor.codeActionsOnSave": {
         "source.fixAll.eslint": true,
         "source.fixAll.stylelint": true
     },
     "cSpell.words": [
         "figma",
-        "pixi",
         "retina",
         "stylelint",
         "oldstyle",
@@ -16,4 +20,4 @@
         "rdquo",
         "debuff"
     ]
-  }
+}

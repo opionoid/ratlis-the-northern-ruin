@@ -1,27 +1,12 @@
-import * as PIXI from 'pixi.js'
 import { Suspense, useEffect, useState } from 'react'
-import { createPixiApp } from "../../utils/pixiUtil"
 import style from './TopHero.module.css'
 
 type TopHeroProps = {}
 
-const TopHero: React.FC<TopHeroProps> = ({}) => {
-  useEffect(() => {
-    const loader = new PIXI.Loader()
-    loader.add("topHero", "./assets/topHero.png")
-  }, [])
-
+const TopHero: React.FC<TopHeroProps> = ({ }) => {
   const onLoad = (element: HTMLDivElement) => {
     if (!element) return;
-    const app = createPixiApp(element);
-    
-    const topHero = PIXI.Sprite.from("./assets/topHero.png")
-    topHero.x = 0
-    topHero.y = 0
-    topHero.width = app.screen.width
-    topHero.height = app.screen.height
-  
-    app.stage.addChild(topHero)
+    console.log('element:', element)
   }
 
   return (

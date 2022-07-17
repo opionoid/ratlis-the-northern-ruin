@@ -7,6 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "lint:css": "stylelint \"src/pages/**/*.css\" | stylelint \"src/components/**/*.css\"",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "component": "node ./scripts/generateComponent/index.js"
@@ -39,7 +40,11 @@
     "eslint-config-next": "12.1.6",
     "eslint-plugin-storybook": "^0.5.12",
     "inquirer": "^8.2.4",
+    "markuplint": "^2.9.0",
     "snake-case": "^3.0.4",
+    "stylelint": "^14.9.1",
+    "stylelint-config-standard": "^26.0.0",
+    "stylelint-order": "^5.0.0",
     "typescript": "4.7.3"
   },
   "volta": {

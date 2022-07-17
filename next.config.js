@@ -12,6 +12,12 @@ const nextConfig = {
   basePath: pathPrefix,
   trailingSlash: true,
   i18n,
+  eslint: {
+    dirs: [
+      "pages/",
+      "components/"
+    ]
+  }
 };
 
 module.exports = nextConfig;

@@ -4,29 +4,32 @@
 
 import { atom, RecoilState } from 'recoil';
 
- export type BattleEffectHandler = () => void; // TODO: MouseEffectHandlerとかのほうがいい？
+ export type BattleEffect = {
+  key: string;
+  effect: () => void | Promise<void>;
+ }
 
-export const battleEffectsOnTurnStart: RecoilState<BattleEffectHandler[]> = atom({
+export const battleEffectsOnTurnStart: RecoilState<Set<BattleEffect>> = atom({
   key: 'battleEffectsOnTurnStart',
-  default: [] as BattleEffectHandler[],
+  default: new Set(),
 });
 
-export const battleEffectsOnTurnEnd: RecoilState<BattleEffectHandler[]> = atom({
+export const battleEffectsOnTurnEnd: RecoilState<Set<BattleEffect>> = atom({
   key: 'battleEffectsOnTurnEnd',
-  default: [] as BattleEffectHandler[],
+  default: new Set(),
 });
 
-export const battleEffectsOnAttack: RecoilState<BattleEffectHandler[]> = atom({
+export const battleEffectsOnAttack: RecoilState<Set<BattleEffect>> = atom({
   key: 'battleEffectsOnAttack',
-  default: [] as BattleEffectHandler[],
+  default: new Set(),
 });
 
-export const battleEffectsOnDefense: RecoilState<BattleEffectHandler[]> = atom({
+export const battleEffectsOnDefense: RecoilState<Set<BattleEffect>> = atom({
   key: 'battleEffectsOnDefense',
-  default: [] as BattleEffectHandler[],
+  default: new Set(),
 });
 
-export const battleEffectsOnDamaged: RecoilState<BattleEffectHandler[]> = atom({
+export const battleEffectsOnDamaged: RecoilState<Set<BattleEffect>> = atom({
   key: 'battleEffectsOnDamaged',
-  default: [] as BattleEffectHandler[],
+  default: new Set(),
 });

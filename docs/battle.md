@@ -1,5 +1,9 @@
 # Battle
 
+```
+updated at {docsify-updated}
+```
+
 turn & command battle
 
 ## Battle Phases

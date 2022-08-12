@@ -6,4 +6,4 @@
 * [Currency](currency.md)
 * [Skill](skill.md)
 * [Equipment](equipment.md)
-* [Bless](bless.md)
+* [Blessing](blessing.md)

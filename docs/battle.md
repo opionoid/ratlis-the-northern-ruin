@@ -38,7 +38,7 @@ The effects OF PLAYER are triggered before ones of Enemy.
 
 The effects are triggered in the following order.
 
-1. Bless
+1. Blessing (1 in 2)
 1. Equipment
 1. Skill
 
@@ -49,6 +49,6 @@ The effects are triggered in the following order.
 
 #### Rewards
 
-- [bless](./bless.md) (high powered but temporary enchantment)
+- [blessing](./blessing.md) (high powered but temporary enchantment)
 - [soul](./currency.md) (temporary currency to get some bless or to be need in some events)
 - [crystal](./currency.md) (permanent currency to grow character or to enchant map)

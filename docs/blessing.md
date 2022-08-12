@@ -17,13 +17,13 @@ Amount of Blessing that the character has is unlimited in 1 game.
 
 ## How to unlock
 
-- use crystal to unlock random blessing in the Mist Sanctuary
+- Use crystal to unlock random blessing in the Mist Sanctuary
 
 ## How to enhance
 
-- Use crystal to enhance blessing (level) permanently in The Mist Sanctuary
+- Use crystal to enhance blessing (level) permanently in the Mist Sanctuary
 
-The Blessings have multiple enhance options every at 1 level, but can apply only 1 at each level.
+The blessings have multiple enhance options every at 1 level, but can apply only 1 at each level.
 
 !> Players can unlock other options even if they've already obtained an option in the level. When they do as, we should show warning modal dialog like "You can apply only 1 option in this level. Switching between options can only be done at the Sanctuary. Do you really want to unlock it? - Yes / No [ ] never show again".
 

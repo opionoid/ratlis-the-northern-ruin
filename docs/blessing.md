@@ -7,13 +7,14 @@ updated at {docsify-updated}
 Blessings are high powered but temporary enchantments to character.
 There are only a few ones in the early playing but players can unlock the others by crystals.
 
-## How to get in game
+## How to get in map
 
 - Get 1 in 3 at start
 - Get 1 in 2 at battle reward
+- Get 1 in 3 at shrine
 - Get in events
 
-Amount of Blessing that the character has is unlimited in 1 game.
+Amount of Blessing that the character has is unlimited in 1 map.
 
 ## How to unlock
 

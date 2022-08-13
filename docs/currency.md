@@ -41,4 +41,16 @@ _Mist_ _upgrading_ will be available after unlocking over Tier 4 map.
 
 ## Mist Orb
 
-Mist Orb is the too rare currency that can reforge a mist mod as another of the same mod.
+Mist Orb is the rare currency that can reforge a mist mod as another of the same mod. It can be dropped at over Tier 4 map.
+
+### Mist Shard
+
+8 Mist Shards to 1 Mist Orb
+
+## Mist Crystal Core
+
+Mist Core is the legendary currency that can craft new Equipment or Skill that has random implicit mod and normal mod. It can be dropped at over Tier 6 map.
+
+### Mist Crystal Shard
+
+8 Mist Crystal Shard to 1 Mist Crystal Core

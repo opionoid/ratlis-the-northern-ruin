@@ -4,4 +4,4 @@
 
 - [騎士の嫡子](./knight.md)
 - [魔女の弟子](./witch.md)
-- [神殿の孤児](./priest.md)
+- [灯台守の孤児](./keeper.md)

@@ -2,7 +2,28 @@
 * [Main](main.md)
 * [Story](story.md)
 * [Map](map.md)
-* [Battle](battle.md)
+* キャラクター
+  * 生まれ
+    * [騎士の嫡子](character/origin/knight.md)
+    * [魔女の弟子](character/origin/witch.md)
+    * [灯台守の孤児](character/origin/keeper.md)
+* 技能
+  * [技能について](ability/index.md)
+  * [汎用](ability/common.md)
+  * [騎士の嫡子](ability/knight.md)
+  * [魔女の弟子](ability/witch.md)
+  * [灯台守の孤児](ability/keeper.md)
+* 戦闘
+  * [基本的な流れ](battle/index.md)
+  * [属性](battle/attribute.md)
+  * [キャラクター](battle/character.md)
+  * スキル
+    * [スキルについて](battle/skill/index.md)
+    * [騎士の嫡子](battle/skill/knight.md)
+    * [魔女の弟子](battle/skill/witch.md)
+    * [灯台守の孤児](battle/skill/keeper.md)
+* アイテム
+  * [アイテムについて](item/index.md)
 * [Currency](currency.md)
 * [Skill](skill.md)
 * [Equipment](equipment.md)

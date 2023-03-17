@@ -1,30 +1,23 @@
-* [Home](index.md)
-* [Main](main.md)
-* [Story](story.md)
-* [Map](map.md)
-* キャラクター
-  * 生まれ
-    * [騎士の嫡子](character/origin/knight.md)
-    * [魔女の弟子](character/origin/witch.md)
-    * [灯台守の孤児](character/origin/keeper.md)
-* 技能
-  * [技能について](ability/index.md)
-  * [汎用](ability/common.md)
-  * [騎士の嫡子](ability/knight.md)
-  * [魔女の弟子](ability/witch.md)
-  * [灯台守の孤児](ability/keeper.md)
-* 戦闘
-  * [基本的な流れ](battle/index.md)
-  * [属性](battle/attribute.md)
-  * [キャラクター](battle/character.md)
-  * スキル
-    * [スキルについて](battle/skill/index.md)
-    * [騎士の嫡子](battle/skill/knight.md)
-    * [魔女の弟子](battle/skill/witch.md)
-    * [灯台守の孤児](battle/skill/keeper.md)
-* アイテム
-  * [アイテムについて](item/index.md)
-* [Currency](currency.md)
-* [Skill](skill.md)
-* [Equipment](equipment.md)
-* [Blessing](blessing.md)
+* 仕様
+  * マップ
+    * エリア
+      * [ダンジョン](specifications/map/area/dungeon.md)
+      * [セーフエリア](specifications/map/area/safe-area.md)
+    * イベント
+      * [会話](specifications/map/event/talk.md)
+      * [戦闘](specifications/map/event/battle.md)
+      * [ショップ](specifications/map/event/shop.md)
+      * [祠](specifications/map/event/shrine.md)
+  * 加護
+    * [確認](specifications/blessing/view.md)
+    * [祈り](specifications/blessing/pray.md)
+  * 霊符
+    * [確認](specifications/deck/view.md)
+    * [編集](specifications/deck/edit.md)
+  * 手記
+    * [霊符](specifications/diary/cards.md)
+    * [依頼](specifications/diary/quests.md)
+    * [記録](specifications/diary/notes.md)
+    * [ヘルプ](specifications/diary/help.md)
+* ストーリー
+* 実装

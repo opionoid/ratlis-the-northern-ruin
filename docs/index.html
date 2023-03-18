@@ -8,14 +8,18 @@
   <meta name="description" content="Description">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/sidebar.min.css" />
 </head>
 
 <body>
   <div id="app"></div>
+  <style>
+    .sidebar {
+      width: 12em;
+    }
+  </style>
   <script>
     window.$docsify = {
-      name: '最果ての\nラトリス',
+      name: 'R-tNR',
       repo: 'RinUeyama/ratlis-the-northern-ruin',
       loadSidebar: true,
       subMaxLevel: 2,
@@ -23,13 +27,12 @@
       formatUpdated: '{YYYY}/{MM}/{DD}',
       alias: {
         '/.*/_sidebar.md': '/_sidebar.md'
-      }
+      },
+      innerWidth: 200,
     }
   </script>
   <!-- Docsify v4 -->
-  <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
-  <!-- plugins -->
-  <script src="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/docsify-sidebar-collapse.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify@4" defer></script>
 </body>
 
 </html>

@@ -2,7 +2,7 @@
  * 1回あたりのゲーム（盤面）の進捗
  */
 import type { NextApiRequest, NextApiResponse } from "next";
-import { CharacterOriginName, CHARACTER_ORIGIN } from "../../atoms/character";
+import { CharacterOriginName, CHARACTER_ORIGIN } from "../../recoil/character";
 
 type Data = {
   origin: CharacterOriginName;

@@ -38,11 +38,6 @@
    default: 0,
  });
  
- export const enemyMana: RecoilState<number> = atom({
-   key: 'enemyMana',
-   default: 0,
- });
- 
  export const enemyBuff: RecoilState<number> = atom({
    key: 'enemyBuff',
    default: 0,

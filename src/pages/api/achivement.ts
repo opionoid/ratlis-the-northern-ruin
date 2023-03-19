@@ -2,7 +2,7 @@
  * アチーブメント
  */
 import type { NextApiRequest, NextApiResponse } from "next";
-import { CharacterOriginName } from "../../atoms/character";
+import { CharacterOriginName } from "../../recoil/character";
 
 type OriginData = {
   clearCount: number;

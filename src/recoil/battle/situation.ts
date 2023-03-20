@@ -9,9 +9,3 @@ export const battleSituationTurnCount: RecoilState<number> = atom({
   key: 'battleSituationTurnCount',
   default: 0,
 });
-
-// 廃棄回数
-export const battleSituationDiscardedCount: RecoilState<number> = atom({
-  key: 'battleSituationDiscardedCount',
-  default: 0,
-});

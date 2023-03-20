@@ -1,4 +1,4 @@
-export const TRIGGER_TYPE = {
+export const TRIGGER = {
     ON_TURN_START: 'on_turn_start',
     ON_TURN_END: 'on_turn_end',
     ON_ATTACK_RECEIVED: 'on_attack_received',
@@ -10,3 +10,4 @@ export const TRIGGER_TYPE = {
     AFTER_TURN_ELAPSED: 'after_turn_elapsed',
     ON_FIRST_CARD_PLAY: 'on_first_card_play',
 }
+export type Trigger = typeof TRIGGER[keyof typeof TRIGGER]

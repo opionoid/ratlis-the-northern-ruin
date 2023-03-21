@@ -3,8 +3,17 @@ import { CharacterState } from "./playerState"
 
 export type CommandActor = 'player' | 'enemy' // FIXME: ここじゃない気がする（スキルではなくコマンドに紐づくので）
 export type SkillTarget = 'self' | 'another' | 'both'
+export type SkillCategory = 'damage' | 'heal' | 'barrier' | 'support' | 'unique'
 
-export type SkillType = 'damage' | 'heal' | 'barrier' | 'support' | 'unique'
+/**
+ * SkillAttribute: ダメージのスケールが物理か魔法か。無はDoTなど攻撃力を参照しない。
+ */
+export type SkillAttribute = 'physical' | 'magical' | 'none'
+
+/**
+ * SkillSubAttribute: 物理／魔法／無とは別に付与される属性で、存在すれば相手の耐性によってダメージに倍率がかかる。
+ */
+export type SkillSubAttribute = 'fire' | 'none'
 
 export type SkillEffect = (
   actorState: CharacterState,
@@ -17,13 +26,13 @@ export type Skill = {
   id: number
   name: string
   description: string
-  additionalEffectDescription: string
   target: SkillTarget
-  type: SkillType
+  category: SkillCategory
+  attribute: SkillAttribute
+  subAttribute: SkillSubAttribute
   value: number
+  repeat: number
   cost: number
   src: string
-  diceThreshold: number
   effect: SkillEffect
-  additionalEffect: () => void;
 }

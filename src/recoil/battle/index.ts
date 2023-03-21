@@ -1,3 +1,4 @@
 export * from './skills';
 export * from './situation';
-export * from './characterState';
+export * from './playerState';
+export * from './enemyState';

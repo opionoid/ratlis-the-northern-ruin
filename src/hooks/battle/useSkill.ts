@@ -1,49 +1,85 @@
-import { useSetRecoilState } from "recoil"
-import { characterState, enemyHp, pcHp, pcMana } from "../../recoil/battle"
-
-export type Skill = {
-    id: number
-    name: string
-    description: string
-    additionalEffectDescription: string
-    damage: number
-    barrier: number
-    type: string
-    cost: number
-    src: string
-    diceThreshold: number
-    onUse: () => void
-    additionalEffect: () => void;
-}
+import { SetterOrUpdater, useRecoilState } from "recoil"
+import { CharacterState, playerState, enemyState, CommandActor, Skill, SkillEffect } from "../../recoil/battle"
 
 export const useSkill = () => {
-    const setCharacterState = useSetRecoilState(characterState)
-    const handleUseSkill = (skill: Card) => {
-        switch (skill.type) {
-            case 'damage':
-              // Perform damage calculation and apply to the enemy
-              break;
-            case 'heal':
-              setCharacterState((prevState) => ({
+    const [player, setPlayer] = useRecoilState(playerState);
+    const [enemy, setEnemy] = useRecoilState(enemyState);
+  
+    const handleUseSkill = (actor: CommandActor, skill: Skill) => {
+      const updateCharacterState = (
+        stateUpdater: SetterOrUpdater<CharacterState>,
+        stateUpdateFn: (prevState: CharacterState) => CharacterState
+      ) => {
+        stateUpdater((prevState) => {
+          const newState = stateUpdateFn(prevState);
+          return { ...prevState, ...newState };
+        });
+      };
+  
+      const applySkill: SkillEffect = (
+        actorState,
+        actorStateUpdater,
+        targetState,
+        targetStateUpdater
+      ) => {
+        const stateUpdateFn = (prevState: CharacterState) => {
+          switch (skill.type) {
+            case "damage":
+              return {
                 ...prevState,
-                hp: prevState.hp + skill.value,
-              }));
-              break;
-            case 'block':
-              // Apply a blocking effect to the character
-              break;
-            case 'buff':
-              // Apply a buff effect to the character
-              break;
-            case 'debuff':
-              // Apply a debuff effect to the enemy
-              break;
-            case 'unique':
-              // Handle unique effects
-              break;
+                hp: Math.max(prevState.hp - skill.value, 0),
+              };
+              case 'heal':
+                return {
+                  ...prevState,
+                  hp: Math.min(prevState.hp + skill.value, prevState.maxHp),
+                };
+              case 'barrier':
+                return {
+                  ...prevState,
+                  barrier: prevState.barrier + skill.value,
+                  };
+              case 'support':
+                return prevState
+              case 'unique':
+                // Handle unique effects
+                return prevState
             default:
-              console.log('Unknown action type');
+              throw new Error(`Unknown action type ${skill.type}`);
           }
-    }
-    return { handleUseSkill }
-}
+        };
+  
+        updateCharacterState(actorStateUpdater, (prevState) => {
+          return { ...prevState, mp: Math.max(prevState.mp - skill.cost, 0) };
+        });
+  
+        updateCharacterState(targetStateUpdater, stateUpdateFn);
+        skill.effect(actorState, actorStateUpdater, targetState, targetStateUpdater);
+      };
+  
+      switch (skill.target) {
+        case "self":
+          if (actor === "player") {
+            applySkill(player, setPlayer, player, setPlayer);
+          } else {
+            applySkill(enemy, setEnemy, enemy, setEnemy);
+          }
+          break;
+        case "another":
+          if (actor === "player") {
+            applySkill(player, setPlayer, enemy, setEnemy);
+          } else {
+            applySkill(enemy, setEnemy, player, setPlayer);
+          }
+          break;
+        case "both":
+          applySkill(player, setPlayer, enemy, setEnemy);
+          applySkill(enemy, setEnemy, player, setPlayer);
+          break;
+        default:
+          break;
+      }
+    };
+  
+    return { handleUseSkill };
+  };

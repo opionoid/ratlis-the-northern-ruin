@@ -1,13 +1,29 @@
-/**
- * [UNFIXED]
- *  - スキルIDを登録するだけ？
- *  - スキルをActiveにするのはスキル管理画面の操作なので、ここではActivateされたスキルのidかindexを指定するだけが綺麗？
- */
+import { SetterOrUpdater } from "recoil"
+import { CharacterState } from "./playerState"
 
-import { atom } from "recoil";
+export type CommandActor = 'player' | 'enemy' // FIXME: ここじゃない気がする（スキルではなくコマンドに紐づくので）
+export type SkillTarget = 'self' | 'another' | 'both'
 
-// TODO: RecoilState<Set<string>> の形かこの形かどちらかに統一
-export const Skills = atom<Set<string>>({
-  key: 'battleSkills',
-  default: new Set()
-})
+export type SkillType = 'damage' | 'heal' | 'barrier' | 'support' | 'unique'
+
+export type SkillEffect = (
+  actorState: CharacterState,
+  setActorState: SetterOrUpdater<CharacterState>,
+  targetState: CharacterState,
+  setTargetState: SetterOrUpdater<CharacterState>,
+) => void
+
+export type Skill = {
+  id: number
+  name: string
+  description: string
+  additionalEffectDescription: string
+  target: SkillTarget
+  type: SkillType
+  value: number
+  cost: number
+  src: string
+  diceThreshold: number
+  effect: SkillEffect
+  additionalEffect: () => void;
+}

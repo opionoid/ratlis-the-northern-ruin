@@ -1,36 +1,45 @@
-import { atom, SetterOrUpdater } from "recoil";
+import { atom } from "recoil";
 import { Trigger } from "../../constants/battle/trigger";
+import { SkillEffect } from "./skills";
 
-export type Effect = {
+export type BuffOrDebuff = {
   id: number,
   name: string;
   description: string;
-  type: 'buff' | 'debuff';
+  type: 'buff' | 'debuff'; // いる？
   icon: string;
   trigger: Trigger;
-  effect: (character: CharacterState, setCharacter: SetterOrUpdater<CharacterState>) => void,
+  effect: SkillEffect;
   duration: number;
 }
 
 export type CharacterState = {
   hp: number;
+  maxHp: number;
   mp: number;
+  maxMp: number;
+  barrier: number;
   physicalAttack: number;
   magicalAttack: number;
   physicalDefense: number;
   magicalDefense: number;
-  effects: Effect[];
+  buff: BuffOrDebuff | null;
+  debuff: BuffOrDebuff | null;
 }
 
-export const characterState = atom<CharacterState>({
-  key: 'characterState',
+export const playerState = atom<CharacterState>({
+  key: 'playerState',
   default: {
     hp: 100,
+    maxHp: 100,
     mp: 100,
+    maxMp: 100,
+    barrier: 0,
     physicalAttack: 10,
     magicalAttack: 10,
     physicalDefense: 10,
     magicalDefense: 10,
-    effects: [],
+    buff: null,
+    debuff: null,
   },
 })

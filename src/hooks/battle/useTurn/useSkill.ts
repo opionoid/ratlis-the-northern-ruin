@@ -1,7 +1,11 @@
 import { SetterOrUpdater, useRecoilState } from "recoil";
-import { CharacterState, playerState, enemyState, CommandActor, Skill, SkillEffect } from "../../recoil/battle";
-import { calcBarrier, calcSingleDamage } from "./utils";
+import { CharacterState, playerState, enemyState, CommandActor, Skill, SkillEffect } from "@/recoil/battle";
+import { calcBarrier, calcSingleDamage } from "../utils";
 
+/**
+ * スキル使用
+ * @parent useTurn
+ */
 export const useSkill = () => {
   const [player, setPlayer] = useRecoilState(playerState);
   const [enemy, setEnemy] = useRecoilState(enemyState);

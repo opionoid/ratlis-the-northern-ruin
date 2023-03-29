@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { SetterOrUpdater, useRecoilState } from "recoil";
-import { playerState, enemyState, CharacterState, Skill } from "../../recoil/battle";
+import { playerState, enemyState, CharacterState, Skill } from "@/recoil/battle";
 import { useSkill } from "./useSkill";
 // import { useEnemyAI } from "./useEnemyAI";
 // import { useItem, Item } from "./useItem";

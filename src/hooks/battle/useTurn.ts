@@ -26,7 +26,6 @@ export const useTurn = () => {
   // const { getEnemyAction } = useEnemyAI();
   // const { handleUseItem } = useItem();
   const getEnemyAction = () => {};
-  const handleUseItem = () => {}
   const [enemyAction, setEnemyAction] = useState<Skill | null>(null);
 
   const reduceEffectDuration = (setCharacter: SetterOrUpdater<CharacterState>) => {
@@ -57,14 +56,14 @@ export const useTurn = () => {
     reduceEffectDuration(setPlayer);
     reduceEffectDuration(setEnemy);
     const enemyActionPreview = getEnemyAction();
-    setEnemyAction(enemyActionPreview);
+    // setEnemyAction(enemyActionPreview);
   };
 
   const playerSelectAction = (actionType: "skill" | "item" | "escape", action: Skill | Item | null) => {
     if (actionType === "skill") {
       handleUseSkill("player", action as Skill);
     } else if (actionType === "item") {
-      handleUseItem("player", action as Item);
+      // handleUseItem("player", action as Item);
     } else if (actionType === "escape") {
       // Handle escape logic here
     }
@@ -79,12 +78,8 @@ export const useTurn = () => {
   };
 
   const endTurn = () => {
-    if (player.hp <= 0 || enemy.hp <= 0) {
-      // End battle
-    } else {
-      setTurnPhase("start");
-      startTurn();
-    }
+    setTurnPhase("start");
+    startTurn();
   };
 
   switch (turnPhase) {
@@ -96,9 +91,6 @@ export const useTurn = () => {
       break;
     case "playerActionSelection":
       // Wait for player input and call playerSelectAction()
-      break;
-    case "playerActionResolution":
-      resolvePlayerAction();
       break;
     case "enemyActionResolution":
       resolveEnemyAction();

@@ -1,0 +1,18 @@
+{
+    "recommendations": [
+      "ecmel.vscode-html-css",
+      "dsznajder.es7-react-js-snippets",
+      "formulahendry.auto-rename-tag",
+      "streetsidesoftware.code-spell-checker",
+      "dbaeumer.vscode-eslint",
+      "esbenp.prettier-vscode",
+      "stylelint.vscode-stylelint",
+      "wayou.vscode-todo-highlight",
+      "yzhang.markdown-all-in-one",
+      "editorconfig.editorconfig",
+      "ics.japanese-proofreading",
+      "eamodio.gitlens",
+      "yusukehirao.vscode-markuplint"
+    ]
+  }
+  

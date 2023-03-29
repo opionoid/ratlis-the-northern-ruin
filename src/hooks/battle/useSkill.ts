@@ -33,7 +33,6 @@ export const useSkill = () => {
               hp: Math.min(prevState.hp + skill.value, prevState.maxHp),
             };
           case "barrier":
-            // 'Barrier' for magic build, affected by magic attack status
             const barrier = skill.repeat * calcBarrier(actorState, skill);
             return {
               ...prevState,

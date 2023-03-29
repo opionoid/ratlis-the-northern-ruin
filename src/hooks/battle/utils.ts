@@ -8,6 +8,7 @@ export const calcSingleDamage = (attacker: CharacterState, defender: CharacterSt
 }
 
 export const calcBarrier = (actor: CharacterState, skill: Skill) => {
-  const barrier = skill.value * actor.magicalAttack / (actor.magicalAttack + 100);
+  const attack = skill.attribute === "physical" ? actor.physicalAttack : actor.magicalAttack;
+  const barrier = skill.value * attack / (attack + 100);
   return Math.ceil(barrier);
 }

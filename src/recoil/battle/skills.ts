@@ -34,5 +34,5 @@ export type Skill = {
   repeat: number
   cost: number
   src: string
-  effect: SkillEffect // TODO: idで指定して、別ファイルで定義する
+  effect: SkillEffect
 }

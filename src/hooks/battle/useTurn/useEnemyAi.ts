@@ -2,6 +2,11 @@ import { useState } from "react";
 import { useRecoilState } from "recoil";
 import { enemyBattleState, Skill } from "@/recoil/battle";
 
+/**
+ * NOTE:
+ * スキルはPCと共通の型にするが、AI typeを選択して
+ * MPやIndexやターン数でそれぞれ重み付けされるようにしたい
+ */
 export const useEnemyAI = () => {
   const [enemy, setEnemy] = useRecoilState(enemyBattleState);
 

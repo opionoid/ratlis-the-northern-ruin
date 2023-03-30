@@ -1,11 +1,11 @@
 import { atom } from "recoil";
 import { Skill } from "../battle";
 
-export type StaticSkillData = Omit<Skill, 'effect'> & {
+export type SkillStaticData = Omit<Skill, 'effect'> & {
   effectId: string;
 } 
 
-export const skillsStaticDataState = atom<StaticSkillData[]>({
+export const skillsStaticDataState = atom<SkillStaticData[]>({
   key: "skillsStaticData",
   default: [],
 });

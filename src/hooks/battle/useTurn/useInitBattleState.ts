@@ -10,6 +10,7 @@ import { selectorFamily, useRecoilValue, useSetRecoilState } from "recoil";
 export const useInitBattleState = () => {
   const playerStaticData = useRecoilValue(playerStaticDataState);
   const enemiesStaticData = useRecoilValue(enemiesStaticDataState);
+
   const skillsStaticData = useRecoilValue(skillsStaticDataState);
 
   const setPlayerBattleState = useSetRecoilState(playerBattleState);
@@ -22,7 +23,7 @@ export const useInitBattleState = () => {
       barrier: 0,
       buff: null,
       debuff: null,
-      skills: [] // いい感じに
+      skills: playerStaticData.activeSkillIdList.map((id))
     });
 
     // enemyの初期化

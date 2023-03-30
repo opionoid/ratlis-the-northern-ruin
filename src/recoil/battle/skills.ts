@@ -1,5 +1,5 @@
 import { SetterOrUpdater } from "recoil"
-import { CharacterState } from "./playerState"
+import { PlayerBattleState } from "./playerState"
 
 export type CommandActor = 'player' | 'enemy' // FIXME: ここじゃない気がする（スキルではなくコマンドに紐づくので）
 export type SkillTarget = 'self' | 'another' | 'both'
@@ -16,14 +16,14 @@ export type SkillAttribute = 'physical' | 'magical' | 'none'
 export type SkillSubAttribute = 'fire' | 'none'
 
 export type SkillEffect = (
-  actorState: CharacterState,
-  setActorState: SetterOrUpdater<CharacterState>,
-  targetState: CharacterState,
-  setTargetState: SetterOrUpdater<CharacterState>,
+  actorState: PlayerBattleState,
+  setActorState: SetterOrUpdater<PlayerBattleState>,
+  targetState: PlayerBattleState,
+  setTargetState: SetterOrUpdater<PlayerBattleState>,
 ) => void
 
 export type Skill = {
-  id: number
+  id: string
   name: string
   description: string
   target: SkillTarget
@@ -34,5 +34,5 @@ export type Skill = {
   repeat: number
   cost: number
   src: string
-  effect: SkillEffect
+  effect: SkillEffect // TODO: idで指定して、別ファイルで定義する
 }

@@ -1,5 +1,5 @@
-import { SetterOrUpdater, useRecoilState } from "recoil";
-import { CharacterState, playerState, enemyState, CommandActor, Skill, SkillEffect } from "@/recoil/battle";
+import { SetterOrUpdater, useRecoilState, useRecoilValue } from "recoil";
+import { PlayerBattleState, playerBattleState, enemyBattleState, CommandActor, Skill, SkillEffect } from "@/recoil/battle";
 import { calcBarrier, calcSingleDamage } from "../utils";
 
 /**
@@ -7,13 +7,13 @@ import { calcBarrier, calcSingleDamage } from "../utils";
  * @parent useTurn
  */
 export const useSkill = () => {
-  const [player, setPlayer] = useRecoilState(playerState);
-  const [enemy, setEnemy] = useRecoilState(enemyState);
+  const [player, setPlayer] = useRecoilState(playerBattleState);
+  const [enemy, setEnemy] = useRecoilState(enemyBattleState);
 
   const handleUseSkill = (actor: CommandActor, skill: Skill) => {
     const updateCharacterState = (
-      stateUpdater: SetterOrUpdater<CharacterState>,
-      stateUpdateFn: (prevState: CharacterState) => CharacterState
+      stateUpdater: SetterOrUpdater<PlayerBattleState>,
+      stateUpdateFn: (prevState: PlayerBattleState) => PlayerBattleState
     ) => {
       stateUpdater((prevState) => {
         const newState = stateUpdateFn(prevState);
@@ -22,7 +22,7 @@ export const useSkill = () => {
     };
 
     const applySkill: SkillEffect = (actorState, actorStateUpdater, targetState, targetStateUpdater) => {
-      const stateUpdateFn = (prevState: CharacterState) => {
+      const stateUpdateFn = (prevState: PlayerBattleState) => {
         switch (skill.category) {
           case "damage":
             const damage = skill.repeat * calcSingleDamage(actorState, targetState, skill);

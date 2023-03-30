@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { SetterOrUpdater, useRecoilState } from "recoil";
-import { playerState, enemyState, CharacterState, Skill } from "@/recoil/battle";
+import { playerBattleState, enemyBattleState, PlayerBattleState, Skill } from "@/recoil/battle";
 import { useSkill } from "./useSkill";
 // import { useEnemyAI } from "./useEnemyAI";
 // import { useItem, Item } from "./useItem";
@@ -19,8 +19,8 @@ type Item = {
 
 export const useTurn = () => {
   const [turnPhase, setTurnPhase] = useState<TurnPhase>("start");
-  const [player, setPlayer] = useRecoilState(playerState);
-  const [enemy, setEnemy] = useRecoilState(enemyState);
+  const [player, setPlayer] = useRecoilState(playerBattleState);
+  const [enemy, setEnemy] = useRecoilState(enemyBattleState);
   const { handleUseSkill } = useSkill();
   // TODO: implement
   // const { getEnemyAction } = useEnemyAI();
@@ -28,7 +28,7 @@ export const useTurn = () => {
   const getEnemyAction = () => {};
   const [enemyAction, setEnemyAction] = useState<Skill | null>(null);
 
-  const reduceEffectDuration = (setCharacter: SetterOrUpdater<CharacterState>) => {
+  const reduceEffectDuration = (setCharacter: SetterOrUpdater<PlayerBattleState>) => {
     setCharacter((prevState) => {
       const updatedBuff = prevState.buff
         ? {

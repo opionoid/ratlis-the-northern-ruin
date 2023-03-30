@@ -1,13 +1,13 @@
 import { atom } from "recoil";
-import { CharacterState } from "./playerState";
+import { PlayerBattleState } from "./playerState";
 
-export type EnemyState = CharacterState & {
+export type EnemyState = PlayerBattleState & {
   modeChangeThreshold?: number | undefined;
-  modeChangeEnemyId?: number | undefined;
+  modeChangeEnemyId?: string | undefined;
 }
 
-export const enemyState = atom<EnemyState>({
-  key: 'enemyState',
+export const enemyBattleState = atom<EnemyState>({
+  key: 'enemyBattleState',
   default: {
     hp: 100,
     maxHp: 100,
@@ -18,6 +18,7 @@ export const enemyState = atom<EnemyState>({
     magicalAttack: 10,
     physicalDefense: 10,
     magicalDefense: 10,
+    skills: [],
     buff: null,
     debuff: null,
   },

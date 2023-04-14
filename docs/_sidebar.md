@@ -1,13 +1,12 @@
 * 仕様
   * マップ
-    * エリア
-      * [ダンジョン](specifications/map/area/dungeon.md)
-      * [セーフエリア](specifications/map/area/safe-area.md)
-    * イベント
-      * [会話](specifications/map/event/talk.md)
-      * [戦闘](specifications/map/event/battle.md)
-      * [ショップ](specifications/map/event/shop.md)
-      * [祠](specifications/map/event/shrine.md)
+    * [ダンジョン](specifications/map/dungeon.md)
+    * [セーフエリア](specifications/map/safe-area.md)
+  * シーン
+    * [会話](specifications/scene/talk.md)
+    * [戦闘](specifications/scene/battle.md)
+    * [ショップ](specifications/scene/shop.md)
+    * [祠](specifications/scene/shrine.md)
   * 加護
     * [確認](specifications/blessing/view.md)
     * [祈り](specifications/blessing/pray.md)
